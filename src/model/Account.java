@@ -59,8 +59,11 @@ public class Account
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, balance, customerId, iban);
+    public int hashCode()
+    {
+        int hashCode = Objects.hash(id, balance, customerId, iban);
+        System.out.println( this.toString() + "hashCode: " + hashCode);
+        return hashCode;
     }
 
     @Override

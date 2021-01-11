@@ -27,15 +27,55 @@ public class TestHashSet
         accounts.add(account_4);
 
         // print accounts
-        System.out.println("Accounts:");
+        System.out.println("\n" + "Accounts (1st): ** WILL NOT ADD ACCOUNT THAT HAS SAME FIELD VALUES **");
         accounts.forEach( i -> System.out.println(i.toString()));
+        System.out.println("\n");
 
         // change clone account and add
-        account_4.setIban("GR201");
+        System.out.println("** COPIED IBAN is CHANGED TO UNIQUE IBAN {.setIban(GR208)} **");
+        account_4.setIban("GR208");
         accounts.add(account_4);
 
         // print accounts
-        System.out.println("\n" + "New Accounts:");
+        System.out.println("Accounts (2nd): ** IT WILL ADD ACCOUNT WITH UNIQUE IBAN **");
         accounts.forEach( i -> System.out.println(i.toString()));
+        System.out.println("\n");
+
+        // turn back to old clone form
+        System.out.println("** TURN BACK TO COPIED IBAN VALUE {.setIban(GR200)} **");
+        account_4.setIban("GR200");
+        accounts.add(account_4);
+
+        // print accounts
+        System.out.println("Accounts (3rd): ** THERE WILL BE DUPLICATED ACCOUNT **");
+        accounts.forEach( i -> System.out.println(i.toString()));
+        System.out.println("\n");
+
+        // turn back to old clone form
+        System.out.println("** COPIED IBAN is AGAIN CHANGED TO UNIQUE IBAN {.setIban(GR210)} **");
+        account_4.setIban("GR210");
+
+        // print accounts
+        System.out.println("Accounts (4rd): ");
+        accounts.forEach( i -> System.out.println(i.toString()));
+
+        accounts.add(account_4);
+
+        // print accounts
+        System.out.println("\n" + "Accounts (5rd): ** ");
+        accounts.forEach( i -> System.out.println(i.toString()));
+
+        accounts.add(account_4);
+
+        // print accounts
+        System.out.println("\n" + "Accounts (6rd): ** ");
+        accounts.forEach( i -> System.out.println(i.toString()));
+
+        accounts.add(account_4);
+
+        // print accounts
+        System.out.println("\n" + "Accounts (7d): ** ");
+        accounts.forEach( i -> System.out.println(i.toString()));
+
     }
 }
